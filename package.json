@@ -1,0 +1,26 @@
+{
+  "name": "simple-blog",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Public domain",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "markdown-it": "^8.4.1",
+    "method-override": "^2.3.10",
+    "moment": "^2.21.0",
+    "mongoose": "^5.0.10",
+    "passport": "^0.4.0",
+    "pug": "^2.0.1",
+    "validator": "^9.4.1",
+    "xss-filters": "^1.2.7"
+  }
+}

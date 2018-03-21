@@ -1,0 +1,43 @@
+extends _layout
+
+include post_form_component
+
+mixin pageChunk(page, currentPage)
+    if page !== currentPage
+        a(class='float-left', href=`/posts${page === 1 ? '' : `?page=${page}`}`) #{page}
+    else
+        span(class='float-left') #{page}
+
+mixin pagination(currentPage, pagesCount)
+    .pagination.clearfix
+        - var page = 1;
+
+        while page <= pagesCount
+            +pageChunk(page, currentPage)
+            if page < pagesCount
+                span(class='float-left') &nbsp;|&nbsp;
+            - page += 1
+
+block content
+    if user.isAdmin
+        +post_form(post.title, post.content, error)
+
+    if postsList.pagesCount > 1
+        +pagination(postsList.currentPage, postsList.pagesCount)
+        hr
+
+    each post in postsList.posts
+        section
+            header
+                if user.isAdmin
+                    a(href=`/posts/${post._id}`) [edit]
+                    | &nbsp;
+                    a(href=`/posts/${post._id}?_method=DELETE`) [delete]
+                | &nbsp;Posted on #{moment(post._createdOn).format('YYYY-MM-DD hh:mm:ss')}
+                h2 #{post.title}
+            article
+                !=post.parsed_content
+            hr
+
+    if postsList.pagesCount > 1
+        +pagination(postsList.currentPage, postsList.pagesCount)

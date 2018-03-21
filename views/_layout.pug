@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible", content="ie=edge")
+
+        meta(name="description", content="")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+
+        link(rel="stylesheet", href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css")
+        link(rel="stylesheet", href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css")
+    body.container
+        header
+            if loggedIn
+                a(href='/logout')#logout LogOut
+                hr
+
+        section
+            block content

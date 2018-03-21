@@ -1,0 +1,14 @@
+mixin post_form(title, content, error)
+    if error
+        #error ERROR! #{error}
+        hr
+
+    form(method='post')
+        label(for='title') Title
+        input(type='text', name='title', value=title)#title
+
+        label(for='content') Content
+        textarea(name='content')#content
+            !=content
+
+        button(type='submit') Save

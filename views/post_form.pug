@@ -1,0 +1,5 @@
+extends _layout
+include post_form_component
+
+block content
+    +post_form(post.title, post.content, error)

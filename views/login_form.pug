@@ -1,0 +1,17 @@
+extends _layout
+
+block content
+    if error
+        #error ERROR! #{error}
+        hr
+    form(method='post', action='/login')
+        label(for='email') Email
+        input(type='email', name='email')#email
+
+        label(for='password') Password
+        input(type='password', name='password')#password
+
+        button(type='submit') LogIn
+        hr
+        div No account?&nbsp;
+            a(href='/signup') SignUp!
