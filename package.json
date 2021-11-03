@@ -20,7 +20,7 @@
     "mongoose": "^5.0.10",
     "passport": "^0.4.0",
     "pug": "^2.0.1",
-    "validator": "^9.4.1",
+    "validator": "^13.7.0",
     "xss-filters": "^1.2.7"
   }
 }
